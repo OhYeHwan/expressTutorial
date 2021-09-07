@@ -2,3 +2,4 @@ npm install express
 npm i -g nodemon
 npm i cookie-parser
 npm i express-session
+npm i mysql2
