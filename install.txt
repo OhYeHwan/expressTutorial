@@ -4,3 +4,4 @@ npm i cookie-parser
 npm i express-session
 npm i mysql2
 npm i express-validator
+ npm i passport passport-local

@@ -11,8 +11,13 @@ router.use((req, res, next) => {
 });
 
 router.get("/", async (req, res) => {
-  const results = await db.promise().query(`SELECT * FROM USERS`);
-  res.status(200).send(results[0]);
+  if (req.user) {
+    console.log(req.user);
+    const results = await db.promise().query(`SELECT * FROM USERS`);
+    res.status(200).send(results[0]);
+  } else {
+    res.status(403).send({ msg: "Not Authenticated" });
+  }
 });
 
 router.get("/posts", (req, res) => {
